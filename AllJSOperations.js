@@ -220,4 +220,29 @@ console.log(deepCopy);
 
 //Destructuring - 
 let [a, b] = [1, 2];
+
 console.log(a, b);
+
+//Bind, apply, call
+
+console.log('Hello World');
+
+const data = {
+    name : "Rohit",
+    rollNo : 3045,
+    section : "N",
+    details : function(section){
+        return this.name+ " "+this.rollNo+ " "+section;
+    }
+}
+
+const person = {
+    name : "Rohan",
+    rollNo : 4521
+}
+
+console.log(data.details.call(person, "S"));
+console.log(data.details.apply(person, ["S"]));
+const result = data.details.bind(person, "S");
+console.log(result);
+console.log(result());
